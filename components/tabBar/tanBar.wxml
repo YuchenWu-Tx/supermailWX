@@ -1,0 +1,15 @@
+<!--components/tabBar/tanBar.wxml-->
+	<view class="tab-control-wrap">
+		<view wx:for="{{titles}}"
+      wx:for-item = "item"
+      wx:for-index = "index"
+			wx:key = "index"
+			bindtap="tabItemClick"
+      class="tab-control-item {{index==currentIndex?'active':''}}"
+			data-key = "{{index}}"
+		>
+			<span>{{item}}</span>
+		</view>
+	</view>
+
+

@@ -1,0 +1,45 @@
+<!--pages/pay/pay.wxml-->
+<!-- 地址管理 -->
+<view class="cart_address">
+  <view class="address_show">
+    <view class="user_info">
+      <view>{{addressInfo.userName}}</view>
+      <view>{{addressInfo.address}}</view>
+    </view>
+    <view class="user_phone">{{addressInfo.telNumber}}</view>
+  </view>
+</view>
+
+<!-- 分界 -->
+<view class="cart_title">购物车</view>
+
+<!-- 购物车列表 -->
+<view class="carts_list" wx:if="{{carts.length!==0}}">
+  <view class="carts_item" wx:for="{{carts}}" wx:key="goods_id">
+    <navigator class="list_img" url="/pages/goods_detail/goods_detail?goods_id={item.goods_id}}"> 
+      <image src="{{item.goods_small_logo?item.goods_small_logo:'https://s1.ax1x.com2020/08/21/dtBzKP.jpg'}}" mode="widthFix" />
+    </navigator>
+
+    <view class="list_info">
+      <view class="info_name">{{item.goods_name}}</view>
+      <view class="info_price_num">
+        <view class="info_price">￥{{item.goods_price}}</view>
+        <view class="info_num">
+          <view class="num">×{{item.num}}</view>
+        </view>
+      </view>
+    </view>
+
+  </view>  
+</view>
+
+<!-- 计算工具 --> 
+<view class="price_tools">
+  <view class="tools_price">        
+    <view class="price">共计￥<text class="total_price_text">{{total}}</text></view>
+    <view class="text">包含邮递费</view>
+  </view>
+  <view class="tools_git" bindtap="tools_git">
+    支付（{{cartsNum}}）
+  </view>
+</view>

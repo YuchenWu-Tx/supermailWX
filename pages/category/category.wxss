@@ -1,0 +1,62 @@
+/* pages/category/category.wxss */
+page {
+  height: 100%;
+}
+.catecontainer {
+  display: flex;
+}
+.catecontainer .left_meun {
+  flex: 2;
+  background-color: #fff;
+}
+.catecontainer .left_meun .left_scroll {
+  height: calc(100vh - 80rpx);
+}
+.catecontainer .left_meun .left_scroll .active {
+  color: var(--themecolor);
+  border-left: 1rpx solid var(--themecolor);
+}
+.catecontainer .right_shop {
+  border-left: 1px solid #ccc;
+  flex: 5;
+}
+.catecontainer .right_shop .right_scroll {
+  height: calc(100vh - 80rpx);
+}
+.left_scroll .left_item {
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  justify-content: center;
+}
+.right_container .right_title {
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+}
+.right_container .right_title .right_log {
+  color: #ccc;
+  margin: 0 20px;
+}
+.right_container .right_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.right_container .right_flex .right_item {
+  box-sizing: border-box;
+  padding: 20rpx;
+  width: 30%;
+}
+.right_container .right_flex .right_item navigator {
+  font-size: 20rpx;
+  text-align: center;
+  height: 100%;
+}
+.right_container .right_flex .right_item navigator image {
+  width: 100%;
+  height: 80%;
+}

@@ -1,0 +1,7 @@
+/**app.wxss**/
+@import './style/iconFont.wxss';
+
+page{
+  --themecolor:#f9544e
+}
+

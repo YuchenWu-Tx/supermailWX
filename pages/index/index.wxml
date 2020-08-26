@@ -1,0 +1,62 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 搜索栏 -->
+  <search></search>
+  <!-- 轮播图 -->
+  <view class="index_swiper">
+    <swiper circular="true"
+    indicator-dots="false" 
+    indicator-color="rgba(0,0,0,.3)" 
+    autoplay="true" interval="3000" duration="1000" 
+    class="swiper"  
+    >
+      <swiper-item wx:for="{{swiperList}}" 
+        wx:for-index="index"
+        wx:for-item ="item"
+        wx:key="goods_id">
+        <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+          <image class="swiper_img" src="{{item.image_src}}" mode="widthFix"/>
+        </navigator>
+      </swiper-item>   
+    </swiper>
+  </view>
+  <!-- 分类菜单 -->
+  <view class="nav_meun">
+    <navigator wx:for="{{navMeun}}" 
+               wx:for-index="index"
+               wx:for-item ="item"
+               wx:key="name" 
+               open-type="{{item.open_type}}"
+               url="{{item.navigator_url}}"
+               class="meun_item">
+      <image class="meun_img" src="{{item.image_src}}" mode="widthFix"/>
+    </navigator>
+  </view>
+  <!-- 楼层 -->
+  <view class="index_floor">
+    <view wx:for="{{floorList}}" 
+          wx:for-index="index"
+          wx:for-item ="item"
+          wx:key="floor_title"
+          class="floor_group">
+      <view class="floor_title">
+        <image class="meun_img" src="{{item.floor_title.image_src}}" mode="widthFix"/>
+      </view>
+      <view class="floor_list">
+        <navigator wx:for="{{item.product_list}}" 
+                 wx:for-index="indey"
+                 wx:for-item ="value"
+                 wx:key="name" 
+                 open-type="{{value.open_type}}"
+                 url="{{value.navigator_url}}"
+                 class="floor_item">
+          <image class="floor_img" src="{{value.image_src}}" mode="scaleToFill" />
+          <!-- <image class="" src="" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" /> -->
+            
+        </navigator>
+      </view>  
+    </view>
+  </view>
+    
+
+</view>

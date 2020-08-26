@@ -1,0 +1,16 @@
+/* components/searchInput/searchInput.wxss */
+.search_input {
+  height: 80rpx;
+  padding: 10px;
+  background-color: var(--themecolor);
+}
+.search_input .search_context {
+  font-size: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15rpx;
+  height: 100%;
+  color: #666;
+}
